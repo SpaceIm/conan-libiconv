@@ -40,8 +40,7 @@ class LibiconvConan(ConanFile):
         del self.settings.compiler.cppstd
 
     def build_requirements(self):
-        if tools.os_info.is_windows and not tools.get_env("CONAN_BASH_PATH") and \
-           tools.os_info.detect_windows_subsystem() != "msys2":
+        if tools.os_info.is_windows and not tools.get_env("CONAN_BASH_PATH"):
             self.build_requires("msys2/20200517")
 
     def source(self):
